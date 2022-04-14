@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grafico</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+    <script>
+
+      google.charts.load('current', {'packages': ['corechart']});
+
+      function desenhagrafico() {
+       var tabela = new google.visualization.DataTable();
+     tabela.addColumn('string', 'Projetos');
+    tabela.addColumn('number', 'Tempo Restante');
+     tabela.addRows([
+        ['Projeto1', 30],
+        ['Projeto2', 10]
+      ]);
+
+      var grafico = new google.visualization.PieChart(document.getElementById('grafico'));
+
+      grafico.draw(tabela);
+      }
+     
+      google.charts.setOnLoadCallback(desenhagrafico);
+     
+    </script>
+</head>
+<body>
+    <div id="grafico"></div>
+</body>
+</html>
